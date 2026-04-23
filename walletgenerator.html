@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>X1Coin Paper Wallet Generator</title><style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0b0b0b;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    header {
+        padding: 20px;
+        background: #111;
+        border-bottom: 2px solid #00b7ff;
+    }
+
+    h1 {
+        margin: 0;
+        color: #00b7ff;
+        letter-spacing: 2px;
+    }
+
+    button {
+        background: #00b7ff;
+        border: none;
+        padding: 15px 25px;
+        margin: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 10px;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .wallet {
+        margin-top: 20px;
+        padding: 20px;
+        border-top: 1px solid #333;
+    }
+
+    .box {
+        background: #111;
+        margin: 10px auto;
+        padding: 15px;
+        width: 90%;
+        max-width: 600px;
+        border-radius: 10px;
+        border: 1px solid #333;
+        word-break: break-all;
+    }
+
+    img {
+        margin-top: 10px;
+        width: 200px;
+        height: 200px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .warning {
+        color: #ff4444;
+        font-size: 12px;
+        margin-top: 20px;
+    }
+</style></head>
+<body><header>
+    <h1>X1COIN PAPER WALLET</h1>
+</header><button onclick="generateWallet()">Generate New Wallet</button>
+
+<div class="wallet" id="wallet"></div><div class="warning">
+    ⚠️ IMPORTANT: Run offline only. Do not use on hosted servers.
+</div><!-- Bitcoin-style crypto libs --><script src="https://cdn.jsdelivr.net/npm/bitcoinjs-lib@6.1.5/dist/bitcoinjs-lib.min.js"></script><script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script><script>
+function generateWallet() {
+    const walletDiv = document.getElementById('wallet');
+    walletDiv.innerHTML = "Generating...";
+
+    // Generate keypair (secp256k1)
+    const keyPair = bitcoinjsLib.ECPair.makeRandom();
+    const privateKey = keyPair.toWIF();
+    const { address } = bitcoinjsLib.payments.p2pkh({
+        pubkey: keyPair.publicKey
+    });
+
+    walletDiv.innerHTML = `
+        <div class="box">
+            <h3>X1COIN ADDRESS</h3>
+            <p>${address}</p>
+            <canvas id="addrQR"></canvas>
+        </div>
+
+        <div class="box">
+            <h3>PRIVATE KEY (KEEP SECRET)</h3>
+            <p>${privateKey}</p>
+            <canvas id="keyQR"></canvas>
+        </div>
+    `;
+
+    // QR codes
+    QRCode.toCanvas(document.getElementById('addrQR'), address);
+    QRCode.toCanvas(document.getElementById('keyQR'), privateKey);
+}
+</script></body>
+</html>
