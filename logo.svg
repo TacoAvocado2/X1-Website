@@ -1,0 +1,16 @@
+<svg width="220" height="60" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font: bold 26px Arial, sans-serif; fill: #111; letter-spacing: 2px; }
+    .accent { fill: #000; }
+  </style>
+
+  <!-- Coin circle -->
+  <circle cx="30" cy="30" r="22" stroke="#000" stroke-width="2" fill="none"></circle>
+  
+  <!-- X inside coin -->
+  <line x1="18" y1="18" x2="42" y2="42" stroke="#000" stroke-width="3"></line>
+  <line x1="42" y1="18" x2="18" y2="42" stroke="#000" stroke-width="3"></line>
+
+  <!-- Text -->
+  <text x="65" y="37" class="text">X1COIN</text>
+</svg>
