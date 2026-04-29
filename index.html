@@ -1,144 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>X1 Coin | Official Website | SHA256 Cryptocurrency</title>
+<title>X1 Coin | Secure SHA256 Cryptocurrency</title>
 
-    <!-- SEO Meta -->
-    <meta name="description" content="X1 Coin is a SHA256 Proof-of-Work cryptocurrency with a total supply of 21 million. Official website for wallet downloads, block explorer, and project details.">
-    <meta name="keywords" content="X1 Coin, x1coin, x1coin.net, SHA256 coin, proof of work crypto, mine x1 coin, cryptocurrency">
-    <meta name="author" content="X1 Coin">
+<meta name="description" content="X1 Coin is a SHA256 Proof-of-Work cryptocurrency with a fixed supply of 21 million. Secure, decentralized, and built for long-term reliability.">
+<link rel="canonical" href="https://x1coin.net/">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://x1coin.net/">
+<!-- SEO Boost -->
+<meta property="og:title" content="X1 Coin Official Website">
+<meta property="og:description" content="Download wallet, explore blockchain, and mine X1 Coin.">
+<meta property="og:type" content="website">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="X1 Coin | Official Website">
-    <meta property="og:description" content="Official X1 Coin website. SHA256 Proof-of-Work cryptocurrency. Download wallet and explore the blockchain.">
-    <meta property="og:url" content="https://x1coin.net/">
-    <meta property="og:type" content="website">
+<style>
+:root {
+    --primary:#000;
+    --soft:#666;
+    --bg:#f6f7f9;
+}
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="X1 Coin | Official Website">
-    <meta name="twitter:description" content="Official X1 Coin website. SHA256 cryptocurrency with 21M supply.">
+body {
+    margin:0;
+    font-family: system-ui, -apple-system, Arial;
+    background:var(--bg);
+    color:#111;
+}
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "X1 Coin",
-        "url": "https://x1coin.net",
-        "sameAs": [
-            "https://github.com/TacoAvocado2/X1COIN"
-        ]
-    }
-    </script>
+/* NAV */
+.nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+    background:#fff;
+    border-bottom:1px solid #eee;
+    position:sticky;
+    top:0;
+}
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #000000;
-            padding: 20px;
-        }
+.logo-wrap {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
 
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
+.logo-wrap img {
+    height:32px;
+}
 
-        /* LOGO ONLY FIX */
-        .logo {
-            max-width: 180px;
-            height: auto;
-            display: block;
-            margin: 0 0 15px 0; /* left aligned */
-        }
+/* HERO */
+.hero {
+    text-align:center;
+    padding:90px 20px 60px;
+}
 
-        /* mobile responsiveness */
-        @media (max-width: 600px) {
-            .logo {
-                max-width: 120px;
-            }
-        }
+.hero img {
+    width:90px;
+    margin-bottom:15px;
+}
 
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
+.hero h1 {
+    font-size:2.8rem;
+    margin-bottom:10px;
+}
 
-        p {
-            margin: 8px 0;
-            line-height: 1.5;
-        }
+.hero p {
+    max-width:620px;
+    margin:auto;
+    color:var(--soft);
+}
 
-        a {
-            color: #000000;
-            text-decoration: underline;
-            word-break: break-word;
-        }
-    </style>
+/* BUTTONS */
+.btn {
+    display:inline-block;
+    margin:10px 6px;
+    padding:12px 22px;
+    border-radius:8px;
+    background:#000;
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.btn.alt {
+    background:#fff;
+    color:#000;
+    border:1px solid #ccc;
+}
+
+/* SECTIONS */
+.section {
+    max-width:1000px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+h2 {
+    margin-bottom:20px;
+}
+
+/* GRID */
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.card {
+    background:#fff;
+    padding:20px;
+    border-radius:12px;
+    border:1px solid #eee;
+    transition:.2s;
+}
+
+.card:hover {
+    transform:translateY(-3px);
+}
+
+/* FOOTER */
+.footer {
+    text-align:center;
+    padding:30px;
+    font-size:.9rem;
+    background:#fff;
+    border-top:1px solid #eee;
+}
+
+/* subtle fade */
+.fade {
+    animation:fadeIn .8s ease;
+}
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(10px);}
+    to {opacity:1;}
+}
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- NAV -->
+<div class="nav">
+    <div class="logo-wrap">
+        <img src="logo.svg">
+        <strong>X1COIN</strong>
+    </div>
+</div>
 
-    <!-- LOGO -->
-    <img src="file_00000000527471f7ac4fc3c7f5f3edec.png" alt="X1 Coin Logo" class="logo">
+<!-- HERO -->
+<div class="hero fade">
+    <img src="file_00000000527471f7ac4fc3c7f5f3edec.png">
 
     <h1>X1 Coin</h1>
 
-    <p><strong>Official Website:</strong> https://x1coin.net</p>
-
-    <p>Powered by the SHA256 algorithm, X1 sets new standards in transaction processing speed and integrity.</p>
-    <p>X1 offers innovative approach to security, efficiency and reliability.</p>
-
-    <p><strong>Consensus mechanism:</strong> Proof-Of-Work (POW)</p>
-    <p><strong>Total supply:</strong> 21,000,000</p>
-    <p><strong>Pre Mined:</strong> NO</p>
-    <p><strong>Block Halving:</strong> 210,000</p>
-    <p><strong>Starting Reward:</strong> 50</p>
-
-    <p><strong>Website:</strong> <a href="https://x1coin.net">https://x1coin.net</a></p>
-
-    <p><strong>Whitepaper:</strong> 
-        <a href="https://x1coin.net/whitepaper.html">https://x1coin.net/whitepaper.html</a>
+    <p>
+        A SHA256 Proof-of-Work cryptocurrency built for security,
+        decentralization, and long-term sustainability with a fixed supply of 21 million coins.
     </p>
 
-    <p><strong>GitHub:</strong> 
-        <a href="https://github.com/TacoAvocado2/X1COIN">https://github.com/TacoAvocado2/X1COIN</a>
-    </p>
+    <div>
+        <a class="btn" href="https://github.com/TacoAvocado2/X1COIN/tags">Download Wallet</a>
+        <a class="btn alt" href="https://explorer.x1coin.net">Explorer</a>
+        <a class="btn alt" href="https://pool.x1coin.net">Mining Pool</a>
+    </div>
+</div>
 
-    <p><strong>Wallet:</strong> 
-        <a href="https://github.com/TacoAvocado2/X1COIN/tags">Download Wallet</a>
-    </p>
+<!-- ABOUT -->
+<div class="section fade">
+<h2>About</h2>
+<p>
+X1 Coin is a decentralized cryptocurrency powered by the SHA256 algorithm and secured through Proof-of-Work consensus.
+It follows a transparent and proven economic model while focusing on reliability and long-term network stability.
+</p>
 
-    <p><strong>Block Explorer:</strong> 
-        <a href="https://explorer.x1coin.net">https://explorer.x1coin.net</a>
-    </p>
+<p>
+This project represents persistence and independent innovation—built to demonstrate that determination and
+technical vision can create lasting systems without centralized control.
+</p>
+</div>
 
+<!-- SPECS -->
+<div class="section fade">
+<h2>Network Specifications</h2>
 
-    <p><strong>Paper Wallet BETA TEST</strong>
-    <a href="https://wallet.x1coin.net">https://wallet.x1coin.net</a>
-    </p>
+<div class="grid">
+<div class="card"><b>Algorithm</b><br>SHA256</div>
+<div class="card"><b>Consensus</b><br>Proof-of-Work</div>
+<div class="card"><b>Supply</b><br>21,000,000</div>
+<div class="card"><b>Premine</b><br>None</div>
+<div class="card"><b>Reward</b><br>50 X1</div>
+<div class="card"><b>Halving</b><br>210,000 Blocks</div>
+</div>
+</div>
 
+<!-- LINKS -->
+<div class="section fade">
+<h2>Resources</h2>
 
-    <p>X1Coin symbolizes betrayal in the 21st century. I am an artist, a father, a fighter, and a lover. All of that was taken from me by people who suppressed me and made me feel like I was a  lesser man.
-As I watched our country fail its people and abandon what it stands for, I became more and more determined to make this project succeed. I understand the vision, and I embrace the resistance. Everyone tried to stop this takeoff.
+<div class="grid">
+<div class="card"><a href="https://x1coin.net">Official Website</a></div>
+<div class="card"><a href="https://x1coin.net/whitepaper.html">Whitepaper</a></div>
+<div class="card"><a href="https://github.com/TacoAvocado2/X1COIN">GitHub</a></div>
+<div class="card"><a href="https://explorer.x1coin.net">Block Explorer</a></div>
+<div class="card"><a href="https://pool.x1coin.net">Mining Pool</a></div>
+<div class="card"><a href="https://wallet.x1coin.net">Paper Wallet</a></div>
+<div class="card"><a href="https://discord.gg/meAazr3nJC">Discord</a></div>
+</div>
+</div>
 
-<br>This Coin represents how those individuals tried to surpress intellegence, creativity, and ones love for hard work. Everyone tried to stop this project. It's price will reflect it's success.</p>
-
-    <p><strong>Discord Channel</strong> 
-        <a href="https://discord.gg/meAazr3nJC">https://discord.gg/meAazr3nJC</a>
-    </p>
-    
-
+<!-- FOOTER -->
+<div class="footer">
+© 2026 X1 Coin™
 </div>
 
 </body>
