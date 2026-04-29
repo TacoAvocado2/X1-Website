@@ -4,50 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>X1 Coin | SHA256 Cryptocurrency</title>
+<title>X1 Coin | Secure SHA256 Cryptocurrency</title>
 
-<meta name="description" content="X1 Coin is a SHA256 Proof-of-Work cryptocurrency with a fixed supply of 21 million coins. Secure, decentralized, and built for long-term sustainability.">
+<meta name="description" content="X1 Coin is a SHA256 Proof-of-Work cryptocurrency with a fixed supply of 21 million. Secure, decentralized, and built for long-term reliability.">
 <link rel="canonical" href="https://x1coin.net/">
+
+<!-- SEO Boost -->
+<meta property="og:title" content="X1 Coin Official Website">
+<meta property="og:description" content="Download wallet, explore blockchain, and mine X1 Coin.">
+<meta property="og:type" content="website">
 
 <style>
 :root {
+    --primary:#000;
+    --soft:#666;
     --bg:#f6f7f9;
-    --text:#111;
-    --card:#fff;
-}
-
-body.dark {
-    --bg:#0f1115;
-    --text:#eee;
-    --card:#1a1d24;
 }
 
 body {
     margin:0;
-    font-family:system-ui, Arial;
+    font-family: system-ui, -apple-system, Arial;
     background:var(--bg);
-    color:var(--text);
-    transition:.3s;
+    color:#111;
 }
 
 /* NAV */
 .nav {
     display:flex;
     justify-content:space-between;
-    padding:15px 30px;
-    background:var(--card);
+    align-items:center;
+    padding:18px 40px;
+    background:#fff;
     border-bottom:1px solid #eee;
     position:sticky;
     top:0;
 }
 
-.logo {
+.logo-wrap {
     display:flex;
     align-items:center;
     gap:10px;
 }
 
-.logo img { height:32px; }
+.logo-wrap img {
+    height:32px;
+}
 
 /* HERO */
 .hero {
@@ -55,34 +56,52 @@ body {
     padding:90px 20px 60px;
 }
 
-.hero img.coin {
+.hero img {
     width:90px;
+    margin-bottom:15px;
+}
+
+.hero h1 {
+    font-size:2.8rem;
     margin-bottom:10px;
 }
 
+.hero p {
+    max-width:620px;
+    margin:auto;
+    color:var(--soft);
+}
+
+/* BUTTONS */
 .btn {
-    padding:12px 20px;
-    margin:5px;
+    display:inline-block;
+    margin:10px 6px;
+    padding:12px 22px;
     border-radius:8px;
-    border:none;
     background:#000;
     color:#fff;
-    cursor:pointer;
+    text-decoration:none;
+    font-weight:600;
 }
 
 .btn.alt {
-    background:transparent;
+    background:#fff;
+    color:#000;
     border:1px solid #ccc;
-    color:var(--text);
 }
 
-/* SECTION */
+/* SECTIONS */
 .section {
     max-width:1000px;
     margin:auto;
     padding:50px 20px;
 }
 
+h2 {
+    margin-bottom:20px;
+}
+
+/* GRID */
 .grid {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -90,25 +109,33 @@ body {
 }
 
 .card {
-    background:var(--card);
+    background:#fff;
     padding:20px;
     border-radius:12px;
     border:1px solid #eee;
     transition:.2s;
 }
-.card:hover { transform:translateY(-4px); }
 
-/* ANIMATION */
-.fade { opacity:0; transform:translateY(20px); transition:.6s; }
-.fade.visible { opacity:1; transform:none; }
+.card:hover {
+    transform:translateY(-3px);
+}
 
 /* FOOTER */
 .footer {
     text-align:center;
     padding:30px;
-    background:var(--card);
-    border-top:1px solid #eee;
     font-size:.9rem;
+    background:#fff;
+    border-top:1px solid #eee;
+}
+
+/* subtle fade */
+.fade {
+    animation:fadeIn .8s ease;
+}
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(10px);}
+    to {opacity:1;}
 }
 </style>
 </head>
@@ -117,161 +144,77 @@ body {
 
 <!-- NAV -->
 <div class="nav">
-    <div class="logo">
+    <div class="logo-wrap">
         <img src="logo.svg">
         <strong>X1COIN</strong>
     </div>
-    <button onclick="toggleTheme()">🌙</button>
 </div>
 
 <!-- HERO -->
 <div class="hero fade">
-    <img src="coin.png" class="coin">
+    <img src="file_00000000527471f7ac4fc3c7f5f3edec.png">
+
     <h1>X1 Coin</h1>
+
     <p>
         A SHA256 Proof-of-Work cryptocurrency built for security,
         decentralization, and long-term sustainability with a fixed supply of 21 million coins.
     </p>
 
     <div>
-        <button class="btn" onclick="go('https://github.com/TacoAvocado2/X1COIN/tags')">Download Wallet</button>
-        <button class="btn alt" onclick="go('https://explorer.x1coin.net')">Explorer</button>
-        <button class="btn alt" onclick="go('https://pool.x1coin.net')">Mining Pool</button>
+        <a class="btn" href="https://github.com/TacoAvocado2/X1COIN/tags">Download Wallet</a>
+        <a class="btn alt" href="https://explorer.x1coin.net">Explorer</a>
+        <a class="btn alt" href="https://pool.x1coin.net">Mining Pool</a>
     </div>
 </div>
 
-<!-- LIVE STATS -->
+<!-- ABOUT -->
 <div class="section fade">
-<h2>Live Network Stats</h2>
-
-<div class="grid">
-<div class="card">Block Height<br><b id="block">Loading...</b></div>
-<div class="card">Difficulty<br><b id="diff">Loading...</b></div>
-<div class="card">Hashrate<br><b id="hash">Loading...</b></div>
-</div>
-</div>
-
-<!-- MINING CALCULATOR -->
-<div class="section fade">
-<h2>Mining Calculator</h2>
-
-<p>Hashrate (TH/s)</p>
-<input id="hashrate" type="number" value="100">
-
-<p>Power (Watts)</p>
-<input id="power" type="number" value="3000">
-
-<p>Electricity Cost ($/kWh)</p>
-<input id="cost" type="number" value="0.12">
-
-<br><br>
-<button class="btn" onclick="calc()">Calculate</button>
-
-<p id="result"></p>
-</div>
-
-<!-- WHY -->
-<div class="section fade">
-<h2>Why X1 Coin</h2>
+<h2>About</h2>
 <p>
-X1 Coin follows a proven Proof-of-Work model using SHA256, ensuring strong security through distributed mining.
-With no premine and a fixed supply, it maintains transparency and fairness from launch.
+X1 Coin is a decentralized cryptocurrency powered by the SHA256 algorithm and secured through Proof-of-Work consensus.
+It follows a transparent and proven economic model while focusing on reliability and long-term network stability.
+</p>
+
+<p>
+This project represents persistence and independent innovation—built to demonstrate that determination and
+technical vision can create lasting systems without centralized control.
 </p>
 </div>
 
 <!-- SPECS -->
 <div class="section fade">
-<h2>Specifications</h2>
+<h2>Network Specifications</h2>
+
 <div class="grid">
-<div class="card">Algorithm<br><b>SHA256</b></div>
-<div class="card">Supply<br><b>21,000,000</b></div>
-<div class="card">Premine<br><b>None</b></div>
-<div class="card">Reward<br><b>50 X1</b></div>
-<div class="card">Halving<br><b>210,000</b></div>
+<div class="card"><b>Algorithm</b><br>SHA256</div>
+<div class="card"><b>Consensus</b><br>Proof-of-Work</div>
+<div class="card"><b>Supply</b><br>21,000,000</div>
+<div class="card"><b>Premine</b><br>None</div>
+<div class="card"><b>Reward</b><br>50 X1</div>
+<div class="card"><b>Halving</b><br>210,000 Blocks</div>
 </div>
 </div>
 
-<!-- ROADMAP -->
+<!-- LINKS -->
 <div class="section fade">
-<h2>Roadmap</h2>
-<div class="grid">
-<div class="card">Launch<br><b>Completed</b></div>
-<div class="card">Explorer<br><b>Live</b></div>
-<div class="card">Mining Pool<br><b>Active</b></div>
-<div class="card">Growth Phase<br><b>Ongoing</b></div>
-</div>
-</div>
+<h2>Resources</h2>
 
-<!-- DOWNLOAD -->
-<div class="section fade">
-<h2>Download Wallet</h2>
-<button class="btn" onclick="go('https://github.com/TacoAvocado2/X1COIN/tags')">Windows</button>
-<button class="btn alt">Mac (Coming Soon)</button>
-<button class="btn alt">Linux (Coming Soon)</button>
+<div class="grid">
+<div class="card"><a href="https://x1coin.net">Official Website</a></div>
+<div class="card"><a href="https://x1coin.net/whitepaper.html">Whitepaper</a></div>
+<div class="card"><a href="https://github.com/TacoAvocado2/X1COIN">GitHub</a></div>
+<div class="card"><a href="https://explorer.x1coin.net">Block Explorer</a></div>
+<div class="card"><a href="https://pool.x1coin.net">Mining Pool</a></div>
+<div class="card"><a href="https://wallet.x1coin.net">Paper Wallet</a></div>
+<div class="card"><a href="https://discord.gg/meAazr3nJC">Discord</a></div>
+</div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-© 2026 X1 Coin™ — All Rights Reserved
+© 2026 X1 Coin™
 </div>
-
-<script>
-function go(url){ window.location.href=url; }
-
-/* THEME */
-function toggleTheme(){
-    document.body.classList.toggle("dark");
-    localStorage.setItem("theme", document.body.classList.contains("dark"));
-}
-if(localStorage.getItem("theme")==="true"){
-    document.body.classList.add("dark");
-}
-
-/* FADE */
-const obs = new IntersectionObserver(e=>{
-    e.forEach(x=>{ if(x.isIntersecting) x.target.classList.add("visible"); });
-});
-document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
-
-/* LIVE STATS */
-async function loadStats(){
-    try{
-        let block = await fetch("https://explorer.x1coin.net/api/getblockcount").then(r=>r.text());
-        let diff = await fetch("https://explorer.x1coin.net/api/getdifficulty").then(r=>r.text());
-        let hash = await fetch("https://explorer.x1coin.net/api/getnetworkhashps").then(r=>r.text());
-
-        document.getElementById("block").innerText = block;
-        document.getElementById("diff").innerText = diff;
-        document.getElementById("hash").innerText = hash;
-    } catch(e){
-        document.getElementById("block").innerText = "N/A";
-        document.getElementById("diff").innerText = "N/A";
-        document.getElementById("hash").innerText = "N/A";
-    }
-}
-loadStats();
-
-/* REAL MINING CALC */
-function calc(){
-    let hashrate = document.getElementById("hashrate").value * 1e12;
-    let power = document.getElementById("power").value;
-    let cost = document.getElementById("cost").value;
-
-    let difficulty = 1e12; // fallback if API not used
-    let blockReward = 50;
-    let blockTime = 600;
-
-    let hashesPerBlock = difficulty * Math.pow(2,32);
-    let blocksPerDay = 86400 / blockTime;
-
-    let coins = (hashrate / hashesPerBlock) * blockReward * blocksPerDay;
-
-    let electricity = (power / 1000) * 24 * cost;
-
-    document.getElementById("result").innerText =
-        "Estimated: " + coins.toFixed(6) + " X1/day | Power Cost: $" + electricity.toFixed(2);
-}
-</script>
 
 </body>
 </html>
