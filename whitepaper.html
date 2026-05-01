@@ -4,170 +4,223 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>X1 Coin Whitepaper</title>
+<title>X1 Coin Whitepaper | SHA256 Proof-of-Work Cryptocurrency</title>
 
-<meta name="description" content="X1 Coin Whitepaper - SHA256 Proof-of-Work cryptocurrency with fixed supply and decentralized mining network.">
-<meta name="keywords" content="X1 Coin, X1 whitepaper, SHA256 crypto, proof of work coin, x1coin.net">
+<meta name="description" content="Official X1 Coin Whitepaper. SHA256 Proof-of-Work cryptocurrency with fixed supply, decentralized mining, and transparent blockchain infrastructure.">
+<meta name="keywords" content="X1 Coin, crypto whitepaper, SHA256, proof of work, decentralized cryptocurrency, mining pool, blockchain">
+<meta name="author" content="X1 Coin">
+
+<!-- Open Graph (Facebook, Discord, etc.) -->
+<meta property="og:title" content="X1 Coin Whitepaper">
+<meta property="og:description" content="Read the official X1 Coin whitepaper. Decentralized SHA256 Proof-of-Work cryptocurrency.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://x1coin.net/whitepaper">
+<meta property="og:image" content="https://x1coin.net/logo.svg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="X1 Coin Whitepaper">
+<meta name="twitter:description" content="Decentralized SHA256 Proof-of-Work cryptocurrency.">
+<meta name="twitter:image" content="https://x1coin.net/logo.svg">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fa;
+    color: #111;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header img {
+    height: 40px;
+}
+
+.actions button {
+    margin-left: 10px;
+    padding: 8px 14px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 850px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+h1 {
+    font-size: 34px;
+}
+
+h2 {
+    margin-top: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+p {
+    line-height: 1.7;
+    color: #333;
+}
+
+a {
+    color: #000;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.pgp-box {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-family: monospace;
+    background: #fafafa;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Print (PDF export) */
+@media print {
+    .header, .actions {
+        display: none;
+    }
+
     body {
-        margin: 0;
-        padding: 20px;
-        font-family: Arial, sans-serif;
-        background: #ffffff;
-        color: #000000;
+        background: white;
     }
 
     .container {
-        max-width: 800px;
-        margin: 0 auto;
+        box-shadow: none;
+        margin: 0;
     }
-
-    h1, h2 {
-        margin-top: 25px;
-    }
-
-    p {
-        line-height: 1.6;
-        margin: 10px 0;
-    }
-
-    a {
-        color: #000000;
-        text-decoration: underline;
-        word-break: break-word;
-    }
-
-    .section {
-        margin-bottom: 25px;
-    }
-
-    hr {
-        border: none;
-        border-top: 1px solid #ccc;
-        margin: 30px 0;
-    }
+}
 </style>
+
+<script>
+function downloadPDF() {
+    window.print();
+}
+
+function share(platform) {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent("X1 Coin Whitepaper");
+
+    let shareUrl = "";
+
+    if (platform === "twitter") {
+        shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+    } else if (platform === "facebook") {
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+    } else if (platform === "linkedin") {
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+    }
+
+    window.open(shareUrl, "_blank");
+}
+</script>
+
 </head>
 
 <body>
 
+<div class="header">
+    <img src="logo.svg" alt="X1 Coin Logo">
+    <div class="actions">
+        <button onclick="downloadPDF()">Download PDF</button>
+        <button onclick="share('twitter')">Share X</button>
+        <button onclick="share('facebook')">Facebook</button>
+        <button onclick="share('linkedin')">LinkedIn</button>
+    </div>
+</div>
+
 <div class="container">
 
-<h1>X1 COIN WHITEPAPER</h1>
+<h1>X1 Coin Whitepaper</h1>
 <p><strong>Version 1.0</strong></p>
 
-<hr>
-
 <div class="section">
-<h2>1. Abstract</h2>
-<p>
-X1 Coin is a decentralized digital currency powered by the SHA256 hashing algorithm and secured through a Proof-of-Work (PoW) consensus mechanism. It provides a fast, secure, and transparent financial network with a fixed supply and predictable issuance schedule.
-</p>
+<h2>Abstract</h2>
+<p>X1 Coin is a decentralized digital currency powered by SHA256 and secured through Proof-of-Work (PoW). It offers a transparent, secure, and predictable monetary system.</p>
 </div>
 
 <div class="section">
-<h2>2. Introduction</h2>
-<p>
-X1 Coin removes reliance on centralized financial authorities by enabling a peer-to-peer network secured by cryptographic proof instead of trust.
-</p>
-<p><strong>Official Website:</strong> <a href="https://x1coin.net">https://x1coin.net</a></p>
+<h2>Introduction</h2>
+<p>X1 Coin removes reliance on centralized authorities through peer-to-peer consensus.</p>
+<p><strong>Website:</strong> <a href="https://x1coin.net">https://x1coin.net</a></p>
 </div>
 
 <div class="section">
-<h2>3. Technical Overview</h2>
-
-<p><strong>Consensus Mechanism:</strong> Proof-of-Work (PoW)</p>
-<p><strong>Algorithm:</strong> SHA256</p>
-
-<h3>3.1 Block Structure</h3>
-<p>Each block contains transactions, timestamp, previous block hash, and nonce.</p>
-
-</div>
-
-<div class="section">
-<h2>4. Token Economics</h2>
-<p><strong>Total Supply:</strong> 21,000,000 X1</p>
-<p><strong>Pre-mined:</strong> None</p>
+<h2>Technical Overview</h2>
+<p><strong>Consensus:</strong> Proof-of-Work</p>
 <p><strong>Algorithm:</strong> SHA256</p>
 </div>
 
 <div class="section">
-<h2>5. Emission Schedule</h2>
-<p><strong>Initial Reward:</strong> 50 X1</p>
-<p><strong>Block Halving:</strong> Every 210,000 blocks</p>
-<p>Rewards decrease by 50% each halving cycle.</p>
+<h2>Token Economics</h2>
+<p><strong>Supply:</strong> 21,000,000 X1</p>
+<p><strong>Pre-mine:</strong> None</p>
 </div>
 
 <div class="section">
-<h2>6. Network Design</h2>
-<p>
-X1 operates on a decentralized peer-to-peer network where nodes validate transactions and miners secure the blockchain.
-</p>
+<h2>Emission</h2>
+<p>Initial reward: 50 X1</p>
+<p>Halving every 210,000 blocks</p>
 </div>
 
 <div class="section">
-<h2>7. Mining System</h2>
-<p>
-Miners solve SHA256 puzzles to validate blocks and earn rewards plus transaction fees.
-</p>
+<h2>Mining</h2>
+<p>Pool: <a href="https://pool.x1coin.net">pool.x1coin.net</a></p>
 </div>
 
 <div class="section">
-<h2>8. Security Model</h2>
-<p>
-Security is based on SHA256 hashing, distributed mining, and difficulty adjustment mechanisms that protect against attacks.
-</p>
+<h2>Explorer</h2>
+<p><a href="https://explorer.x1coin.net">explorer.x1coin.net</a></p>
 </div>
 
 <div class="section">
-<h2>9. Block Explorer</h2>
-<p>
-<a href="https://x1coin.net/blockexplorer">https://x1coin.net/blockexplorer</a>
-</p>
+<h2>GitHub</h2>
+<p><a href="https://github.com/TacoAvocado2/X1COIN">Repository</a></p>
 </div>
 
 <div class="section">
-<h2>10. Wallet System</h2>
-<p>
-Wallet releases are available via GitHub tags:
-</p>
-<p>
-<a href="https://github.com/TacoAvocado2/X1COIN/tags">
-https://github.com/TacoAvocado2/X1COIN/tags
-</a>
-</p>
+<h2>Contact & Security</h2>
+<p>Email: info@x1coin.net</p>
+
+<h3>PGP Key</h3>
+<div class="pgp-box">
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+[ADD KEY HERE]
+-----END PGP PUBLIC KEY BLOCK-----
+</div>
 </div>
 
-<div class="section">
-<h2>11. Mining Pool Infrastructure</h2>
-<p>
-X1 supports Stratum-based mining pools with daemon nodes, payout systems, and miner connection layers.
-</p>
+<div class="footer">
+© 2026 X1 Coin. All rights reserved.
 </div>
-
-<div class="section">
-<h2>12. Roadmap</h2>
-<p><strong>Phase 1:</strong> Blockchain launch, wallet release, mining pool setup</p>
-<p><strong>Phase 2:</strong> Exchange integration, scaling, explorer upgrades</p>
-<p><strong>Phase 3:</strong> Ecosystem expansion and developer tools</p>
-</div>
-
-<div class="section">
-<h2>13. Conclusion</h2>
-<p>
-X1 Coin is built on proven cryptographic principles with a focus on simplicity, fairness, and decentralization.
-</p>
-</div>
-
-<hr>
-
-<p>
-<strong>Official Links:</strong><br>
-Website: <a href="https://x1coin.net">x1coin.net</a><br>
-GitHub: <a href="https://github.com/TacoAvocado2/X1COIN">Repository</a><br>
-Block Explorer: <a href="https://explorer.x1coin.net">Explorer</a>
-</p>
 
 </div>
 
