@@ -10,14 +10,12 @@
 <meta name="keywords" content="X1 Coin, crypto whitepaper, SHA256, proof of work, decentralized cryptocurrency, mining pool, blockchain">
 <meta name="author" content="X1 Coin">
 
-<!-- Open Graph (Facebook, Discord, etc.) -->
 <meta property="og:title" content="X1 Coin Whitepaper">
 <meta property="og:description" content="Read the official X1 Coin whitepaper. Decentralized SHA256 Proof-of-Work cryptocurrency.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://x1coin.net/whitepaper">
 <meta property="og:image" content="https://x1coin.net/logo.svg">
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="X1 Coin Whitepaper">
 <meta name="twitter:description" content="Decentralized SHA256 Proof-of-Work cryptocurrency.">
@@ -45,9 +43,7 @@ body {
     z-index: 100;
 }
 
-.header img {
-    height: 40px;
-}
+.header img { height: 40px; }
 
 .actions button {
     margin-left: 10px;
@@ -67,34 +63,23 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-h1 {
-    font-size: 34px;
-}
-
+h1 { font-size: 34px; }
 h2 {
     margin-top: 40px;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
 }
 
-p {
-    line-height: 1.7;
-    color: #333;
-}
+p { line-height: 1.7; color: #333; }
 
-a {
-    color: #000;
-}
-
-.section {
-    margin-bottom: 30px;
-}
+.section { margin-bottom: 30px; }
 
 .pgp-box {
     border: 1px solid #ddd;
     padding: 10px;
     font-family: monospace;
     background: #fafafa;
+    white-space: pre-wrap;
 }
 
 .footer {
@@ -103,20 +88,10 @@ a {
     color: #666;
 }
 
-/* Print (PDF export) */
 @media print {
-    .header, .actions {
-        display: none;
-    }
-
-    body {
-        background: white;
-    }
-
-    .container {
-        box-shadow: none;
-        margin: 0;
-    }
+    .header, .actions { display: none; }
+    body { background: white; }
+    .container { box-shadow: none; margin: 0; }
 }
 </style>
 
@@ -164,46 +139,108 @@ function share(platform) {
 
 <div class="section">
 <h2>Abstract</h2>
-<p>X1 Coin is a decentralized digital currency powered by SHA256 and secured through Proof-of-Work (PoW). It offers a transparent, secure, and predictable monetary system.</p>
+<p>
+X1 Coin is a decentralized digital currency secured by SHA256 Proof-of-Work consensus.
+It is designed to provide a fair, transparent, and immutable monetary system where issuance
+is governed solely by computational work rather than centralized authority.
+</p>
 </div>
 
 <div class="section">
 <h2>Introduction</h2>
-<p>X1 Coin removes reliance on centralized authorities through peer-to-peer consensus.</p>
+<p>
+Modern financial systems rely heavily on centralized intermediaries, creating inefficiencies,
+censorship risks, and inflationary supply control. X1 Coin introduces a decentralized alternative
+where trust is replaced by cryptographic proof and distributed consensus.
+</p>
+<p>
+X1 Coin is designed to be a base-layer digital asset supporting long-term network security and
+transparent value transfer without reliance on third parties.
+</p>
 <p><strong>Website:</strong> <a href="https://x1coin.net">https://x1coin.net</a></p>
 </div>
 
 <div class="section">
 <h2>Technical Overview</h2>
-<p><strong>Consensus:</strong> Proof-of-Work</p>
-<p><strong>Algorithm:</strong> SHA256</p>
+<p><strong>Consensus Mechanism:</strong> Proof-of-Work (PoW)</p>
+<p><strong>Hashing Algorithm:</strong> SHA256</p>
+<p><strong>Block Time:</strong> ~10 minutes (target)</p>
+<p><strong>Network Model:</strong> Peer-to-peer distributed ledger</p>
+<p>
+The SHA256 algorithm ensures computational security and compatibility with established mining infrastructure.
+All transactions are verified through consensus across distributed nodes.
+</p>
 </div>
 
 <div class="section">
 <h2>Token Economics</h2>
-<p><strong>Supply:</strong> 21,000,000 X1</p>
+<p><strong>Maximum Supply:</strong> 21,000,000 X1</p>
 <p><strong>Pre-mine:</strong> None</p>
+<p><strong>Inflation Model:</strong> Fixed emission schedule with decreasing block rewards</p>
+
+<p>
+The fixed supply ensures scarcity, while predictable issuance allows miners to plan long-term participation.
+</p>
 </div>
 
 <div class="section">
-<h2>Emission</h2>
-<p>Initial reward: 50 X1</p>
-<p>Halving every 210,000 blocks</p>
+<h2>Emission Schedule</h2>
+<p>
+Initial block reward: <strong>50 X1</strong><br>
+Halving interval: <strong>210,000 blocks</strong><br>
+</p>
+<p>
+This halving mechanism ensures decreasing issuance over time, ultimately converging toward the fixed maximum supply.
+</p>
 </div>
 
 <div class="section">
 <h2>Mining</h2>
-<p>Pool: <a href="https://pool.x1coin.net">pool.x1coin.net</a></p>
+<p>
+Mining secures the X1 network through computational work. Miners validate transactions and add new blocks to the blockchain.
+</p>
+<p>
+Mining is open and permissionless. Any participant with SHA256-compatible hardware may contribute to network security.
+</p>
+<p>
+Pool: <a href="https://pool.x1coin.net">pool.x1coin.net</a>
+</p>
 </div>
 
 <div class="section">
-<h2>Explorer</h2>
+<h2>Network Security</h2>
+<p>
+X1 Coin relies on SHA256 cryptographic hashing and distributed consensus to prevent double spending and network manipulation.
+</p>
+<p>
+Security increases proportionally with total network hash power, making attacks economically infeasible at scale.
+</p>
+</div>
+
+<div class="section">
+<h2>Blockchain Explorer</h2>
+<p>
+The blockchain is fully transparent and publicly auditable.
+</p>
 <p><a href="https://explorer.x1coin.net">explorer.x1coin.net</a></p>
 </div>
 
 <div class="section">
-<h2>GitHub</h2>
-<p><a href="https://github.com/TacoAvocado2/X1COIN">Repository</a></p>
+<h2>Development & Open Source</h2>
+<p>
+X1 Coin is maintained as an open-source project to ensure transparency, auditability, and community participation.
+</p>
+<p>
+GitHub: <a href="https://github.com/TacoAvocado2/X1COIN">Repository</a>
+</p>
+</div>
+
+<div class="section">
+<h2>Roadmap</h2>
+<p><strong>Phase 1:</strong> Launch mainnet, mining pools, and explorer</p>
+<p><strong>Phase 2:</strong> Wallet optimization and mobile integration</p>
+<p><strong>Phase 3:</strong> Exchange listings and liquidity expansion</p>
+<p><strong>Phase 4:</strong> Ecosystem development and merchant adoption tools</p>
 </div>
 
 <div class="section">
